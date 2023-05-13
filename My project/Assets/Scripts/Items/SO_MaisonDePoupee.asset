@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SO_MaisonDePoupee
   m_EditorClassIdentifier: 
   itemName: "Maison de poup\xE9e"
-  prefab: {fileID: 0}
+  prefab: {fileID: 6359074989201234737, guid: 26778c8e456516449bdd3fd91c483276, type: 3}
   itemTier: 3
   itemSound: {fileID: 0}
   authorized: 1

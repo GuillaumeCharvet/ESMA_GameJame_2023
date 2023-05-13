@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -213,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100244677}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.027, y: 1.018, z: -4.633}
+  m_LocalPosition: {x: -1.04, y: -0.28, z: -2.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -244,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129195681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.027, y: 1.063, z: -2.16}
+  m_LocalPosition: {x: -1.027, y: 1.255, z: -2.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -457,7 +457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &410087040
 Light:
   m_ObjectHideFlags: 0
@@ -610,7 +610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435478450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.018, y: -0.956, z: -3.01}
+  m_LocalPosition: {x: 0.94, y: -0.956, z: -2.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -642,17 +642,17 @@ PrefabInstance:
     - target: {fileID: 3040423774935803064, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.006000042
+      value: -0.042
       objectReference: {fileID: 0}
     - target: {fileID: 3040423774935803064, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.22399998
+      value: -0.119
       objectReference: {fileID: 0}
     - target: {fileID: 3040423774935803064, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0010000467
+      value: -0.217
       objectReference: {fileID: 0}
     - target: {fileID: 3040423774935803064, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
@@ -692,12 +692,12 @@ PrefabInstance:
     - target: {fileID: 3040423774935803067, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.9
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3040423774935803067, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
       propertyPath: m_Size.z
-      value: 1.27
+      value: 0.91
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9a4c6394d2884a4b812479886dd74cc, type: 3}
@@ -1006,7 +1006,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843242118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.018, y: 1.063, z: -3.01}
+  m_LocalPosition: {x: 0.94, y: 1.063, z: -2.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1070,7 +1070,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924322592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.018, y: 1.063, z: -2.16}
+  m_LocalPosition: {x: 0.94, y: 1.063, z: -2.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1342,7 +1342,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1205388907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.027, y: 1.063, z: -3.01}
+  m_LocalPosition: {x: -1.027, y: 1.255, z: -3.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1463,7 +1463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393640413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.512, y: 1.249, z: -1.075}
+  m_LocalPosition: {x: 0.651, y: 1.01, z: -0.812}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1625,7 +1625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686650622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.749, y: 1.249, z: -1.075}
+  m_LocalPosition: {x: -0.64, y: 1.01, z: -0.797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1693,17 +1693,17 @@ PrefabInstance:
     - target: {fileID: 3040423774935803064, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15099996
+      value: 0.066000044
       objectReference: {fileID: 0}
     - target: {fileID: 3040423774935803064, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.22399998
+      value: -0.11900002
       objectReference: {fileID: 0}
     - target: {fileID: 3040423774935803064, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0010000467
+      value: -0.21699995
       objectReference: {fileID: 0}
     - target: {fileID: 3040423774935803064, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
@@ -1743,12 +1743,12 @@ PrefabInstance:
     - target: {fileID: 3040423774935803067, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.9
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 3040423774935803067, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
       propertyPath: m_Size.z
-      value: 1.27
+      value: 0.91
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9a4c6394d2884a4b812479886dd74cc, type: 3}
@@ -2171,35 +2171,50 @@ MonoBehaviour:
   speedFromTapisToHand: 2
   speedFromHandToTapis: 4
   coteOfItemInHand: 0
-  rescaleProfile:
+  rescaleProfileTapis:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: -1.8991312
-      outSlope: -1.8991312
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.1189558
-      value: -0.22591266
-      inSlope: -0.5084137
-      outSlope: -0.5084137
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 1
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1.3914316
-      outSlope: 1.3914316
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rescaleProfileMain:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -2233,17 +2248,24 @@ MonoBehaviour:
   - {fileID: 843242119}
   - {fileID: 435478451}
   trashSpeed: 0.45
-  sizeOfItemInTrash: 0.6
+  sizeOfItemInTrash: 0.5
   posDepot:
   - {fileID: 129195682}
   - {fileID: 1205388908}
   - {fileID: 100244678}
   depotSpeed: 0.45
-  sizeOfItemInDepot: 0.6
+  sizeOfItemInDepot: 0.5
+  itemInEtabliG: {fileID: 0}
+  itemInEtabliD: {fileID: 0}
   posEtabli_G: {fileID: 1393640414}
   posEtabli_D: {fileID: 1686650623}
   etabliSpeed: 0.45
   sizeOfItemInEtabli: 0.8
+  itemInStockage_1: {fileID: 0}
+  itemInStockage_2: {fileID: 0}
+  itemInStockage_3: {fileID: 0}
+  itemInStockage_4: {fileID: 0}
+  itemInStockage_5: {fileID: 0}
   posStockage_1: {fileID: 1606117330}
   posStockage_2: {fileID: 1417019459}
   posStockage_3: {fileID: 1588852035}
@@ -2298,7 +2320,7 @@ PrefabInstance:
     - target: {fileID: 3040423774935803064, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.057
+      value: 0.901
       objectReference: {fileID: 0}
     - target: {fileID: 3040423774935803064, guid: c9a4c6394d2884a4b812479886dd74cc,
         type: 3}
