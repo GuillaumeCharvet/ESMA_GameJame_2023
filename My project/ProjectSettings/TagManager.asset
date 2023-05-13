@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Item
+  - DropZone
+  - Trash
+  - Etabli_G
+  - Etabli_D
+  - Stockage_1
+  - Stockage_2
+  - Stockage_3
+  - Stockage_4
+  - Stockage_5
   layers:
   - Default
   - TransparentFX
@@ -11,8 +21,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Item
+  - Zone
   - 
   - 
   - 
