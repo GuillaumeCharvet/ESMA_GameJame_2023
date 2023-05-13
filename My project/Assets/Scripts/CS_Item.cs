@@ -28,7 +28,7 @@ public class CS_Item : MonoBehaviour
         {
             case ItemPosition.TapisRoulant_G:
 
-                transform.localScale = Mathf.Lerp(1f, itemsManager.sizeOfItemInHand, valueFromTapisToHand) * Vector3.one;
+                transform.localScale = Mathf.LerpUnclamped(1f, itemsManager.sizeOfItemInHand, itemsManager.rescaleProfile.Evaluate(valueFromTapisToHand)) * Vector3.one;
 
                 if (currentTapisRoulantIndex < itemsManager.posTapisGauche.Count - 1)
                 {

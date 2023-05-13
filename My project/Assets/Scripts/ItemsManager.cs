@@ -29,6 +29,7 @@ public class ItemsManager : MonoBehaviour
     public float speedFromTapisToHand = 2f;
     public float speedFromHandToTapis = 4f;
     public Cote coteOfItemInHand;
+    public AnimationCurve rescaleProfile;
     public AnimationCurve speedProfile;
 
     [Header("Trash")]
@@ -203,6 +204,7 @@ public class ItemsManager : MonoBehaviour
 
     public SO_Item GetRandomItem(int tier)
     {
+        Debug.Log("taille tier 1 = " + tierItems[0].Count);
         int randomInd = Random.Range(0, tierItems[tier - 1].Count);
         Debug.Log("random index = " + randomInd);
         return tierItems[tier - 1][randomInd];
