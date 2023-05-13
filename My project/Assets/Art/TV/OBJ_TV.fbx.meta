@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Ecran
+    second: {fileID: 2100000, guid: a4cb6a8be7350814e8aa7f2ff9e45b1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Material #20
     second: {fileID: 2100000, guid: a4cb6a8be7350814e8aa7f2ff9e45b1a, type: 2}
   materials:
