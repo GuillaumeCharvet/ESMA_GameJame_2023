@@ -1,31 +1,17 @@
 fileFormatVersion: 2
-guid: d8b584fd7acb6e044b627e9cd195aea6
+guid: 5a0aa48ea06ab7a4fac75ca310815f91
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: A_Idle
-  - first:
-      74: -2710459509506935393
-    second: A_Suspect
-  - first:
-      74: -8973371826613330500
-    second: A_Desactive
-  - first:
-      74: 8083449622827886615
-    second: A_Idle_Desactive
+    second: Idle_Rouleau_base
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: df035469d76ca7e45b5f45cd440be730, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #14
-    second: {fileID: 2100000, guid: 15accc5ef60b913498cb9d3365e32345, type: 2}
+      name: Material #18
+    second: {fileID: 2100000, guid: a0be143ed268ece4197680097f05d2f3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -55,98 +41,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: A_Idle
+      name: Idle_Rouleau_base
       takeName: Take 001
       internalID: 0
       firstFrame: 0
-      lastFrame: 10
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: A_Suspect
-      takeName: Take 001
-      internalID: 0
-      firstFrame: 10
-      lastFrame: 140
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: A_Desactive
-      takeName: Take 001
-      internalID: 0
-      firstFrame: 140
-      lastFrame: 199
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: A_Idle_Desactive
-      takeName: Take 001
-      internalID: 0
-      firstFrame: 199
-      lastFrame: 200
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
