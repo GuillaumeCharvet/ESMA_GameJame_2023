@@ -56,7 +56,7 @@ public class CS_Observer : MonoBehaviour
             _animCam.SetBool("IsActive", false);
 
     }
-        public void ActiveTimer()   //if(3 obj fabriqué){ _ActiveTimer = true }
+    public void ActiveTimer()   //if(3 obj fabriqué){ _ActiveTimer = true }
     {
         _ActiveTimerCam = true;
     }
