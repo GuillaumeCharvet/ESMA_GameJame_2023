@@ -10,4 +10,5 @@ public class SO_Item : ScriptableObject
     public int itemTier;
     public AudioClip itemSound;
     public bool authorized;
+    public SO_Item enfant1, enfant2;
 }
