@@ -14,6 +14,7 @@ public class S_Timer : MonoBehaviour
     
     private float _minutes, _seconds;
     private float _time;
+    private float _timeStop;
     private float _timeStart;
 
     private void Start()
@@ -27,8 +28,8 @@ public class S_Timer : MonoBehaviour
         {
             //_timeIncrement = _timeStop + Time.time - _timeStart;
 
-            _time = DefaultTime - (Time.time - _timeStart);
-            
+            _time = ( DefaultTime - Time.time );
+
             _minutes = (int)(_time / 60f) % 60;
             _seconds = (int)(_time % 60f);
 
@@ -42,17 +43,59 @@ public class S_Timer : MonoBehaviour
             }
         }
 
-       if (_stopTimer) 
+        if (_stopTimer)
             Time.timeScale = 0f;
-       else
+        else 
             Time.timeScale = 1f;
-       
-
     }
 
-    public void TimerStop()
+    public void TimerStopStart()
     {
         _stopTimer = !_stopTimer;
     }
 
 }
+/*
+private void Start()
+{
+    _time = DefaultTime;
+
+    StartCoroutine(TimerCoroutine());
+}
+private void Update()
+{
+
+    //_timeIncrement = _timeStop + Time.time - _timeStart;
+
+    //_time = ( DefaultTime - Time.time ) ;
+
+
+}
+
+private IEnumerator TimerCoroutine()
+{
+    while (true)
+    {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitWhile(() => _isTimerStopped);
+        _time = Mathf.Clamp(_time - Time.deltaTime, 0f, DefaultTime);
+        Debug.Log(_time);
+
+        _minutes = (int)(_time / 60f) % 60;
+        _seconds = (int)(_time % 60f);
+
+        if (_seconds < 10)// ajoute un 0 devant les 10 premiere sec
+        {
+            _timerTxt.text = "0" + _minutes + ":" + "0" + _seconds;
+        }
+        else
+        {
+            _timerTxt.text = _minutes + ":" + _seconds;
+        }
+    }
+}
+
+public void TimerStopStart()
+{
+    _isTimerStopped = !_isTimerStopped;
+}*/
