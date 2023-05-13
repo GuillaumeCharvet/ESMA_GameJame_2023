@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d86c5bd5c565d614b8250791438d9398, type: 3}
-  m_Name: ItemData1
+  m_Name: SO_Feutres
   m_EditorClassIdentifier: 
-  itemName: 
-  prefab: {fileID: 6359074989201234737, guid: c6bfe493f9da01f4aad7ebbf0efefa2f, type: 3}
-  itemTier: 1
+  itemName: Feutres
+  prefab: {fileID: 0}
+  itemTier: 2
   itemSound: {fileID: 0}
-  authorized: 0
+  authorized: 1
+  enfant1: {fileID: 11400000, guid: cb036117b3205d442936188ec680011b, type: 2}
+  enfant2: {fileID: 11400000, guid: 5cbda510f54f19c4ca3e4de21aa4ad89, type: 2}

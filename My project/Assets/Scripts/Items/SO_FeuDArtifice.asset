@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86c5bd5c565d614b8250791438d9398, type: 3}
+  m_Name: SO_FeuDArtifice
+  m_EditorClassIdentifier: 
+  itemName: Feu d'artifice
+  prefab: {fileID: 0}
+  itemTier: 3
+  itemSound: {fileID: 0}
+  authorized: 0
+  enfant1: {fileID: 11400000, guid: 5cbda510f54f19c4ca3e4de21aa4ad89, type: 2}
+  enfant2: {fileID: 11400000, guid: fa4d142559c4fe94a91ca7eddb5e1c99, type: 2}

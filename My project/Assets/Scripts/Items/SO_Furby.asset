@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d86c5bd5c565d614b8250791438d9398, type: 3}
-  m_Name: ItemData1 2
+  m_Name: SO_Furby
   m_EditorClassIdentifier: 
-  itemName: 
-  prefab: {fileID: 6359074989201234737, guid: c6bfe493f9da01f4aad7ebbf0efefa2f, type: 3}
+  itemName: Furby
+  prefab: {fileID: 0}
   itemTier: 3
   itemSound: {fileID: 0}
-  authorized: 0
+  authorized: 1
+  enfant1: {fileID: 11400000, guid: 7dae46bc472f4674aa9bd7f22a85d1f1, type: 2}
+  enfant2: {fileID: 11400000, guid: 19861c7d149eba34fa939880f14f7408, type: 2}
