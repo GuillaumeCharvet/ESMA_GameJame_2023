@@ -33,7 +33,11 @@ public class CS_ItemGenerator : MonoBehaviour
     public void SpawnItem(Cote cote)
     {
         var soItem = itemsManager.GetRandomItem(1);
+        
         var item = Instantiate(soItem.prefab);
+        item.tag = "Item";
+        item.layer =  LayerMask.NameToLayer("Item");
+
         var csItem = item.AddComponent<CS_Item>();
         itemsManager.existingItems.Add(csItem);
         csItem.SO_Item = soItem;
