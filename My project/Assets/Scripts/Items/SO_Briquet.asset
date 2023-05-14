@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: Briquet
   prefab: {fileID: 919132149155446097, guid: 7a99fc152a585f54a8c5e19fe5c63926, type: 3}
   itemTier: 3
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 0ca672edabbceef4692ae0b9c8285126, type: 3}
   authorized: 0
   enfant1: {fileID: 11400000, guid: 7283d790629e8b1409ae29a9f3b8bcef, type: 2}
   enfant2: {fileID: 11400000, guid: 65d7e03209519664985e4ea8a5f6bfdd, type: 2}
+  journal: {fileID: 0}

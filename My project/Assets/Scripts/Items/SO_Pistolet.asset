@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: Pistolet
   prefab: {fileID: 6359074989201234737, guid: 26778c8e456516449bdd3fd91c483276, type: 3}
   itemTier: 2
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: a69359cd312883643998fd71c8ec17fe, type: 3}
   authorized: 0
   enfant1: {fileID: 11400000, guid: 77332526eb745254787400e56109e55f, type: 2}
   enfant2: {fileID: 11400000, guid: 5cbda510f54f19c4ca3e4de21aa4ad89, type: 2}
+  journal: {fileID: 0}

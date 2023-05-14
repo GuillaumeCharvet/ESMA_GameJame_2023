@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: Console et manette
   prefab: {fileID: 919132149155446097, guid: e282b714c9ad43442b4e0f6c5166a4aa, type: 3}
   itemTier: 3
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 4abdc8b921f4eb741baa30351f93e35f, type: 3}
   authorized: 1
   enfant1: {fileID: 11400000, guid: 312281cf1b38f2c4ab0767659479e232, type: 2}
   enfant2: {fileID: 11400000, guid: 7283d790629e8b1409ae29a9f3b8bcef, type: 2}
+  journal: {fileID: 0}
