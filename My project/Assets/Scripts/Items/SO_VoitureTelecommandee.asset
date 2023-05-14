@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "Voiture t\xE9l\xE9command\xE9e"
   prefab: {fileID: 6359074989201234737, guid: 26778c8e456516449bdd3fd91c483276, type: 3}
   itemTier: 3
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: dcccfaa1bdc938449a513bf7be50f25a, type: 3}
   authorized: 1
   enfant1: {fileID: 11400000, guid: 37aec89b6ac6be14196553c6c104c342, type: 2}
   enfant2: {fileID: 11400000, guid: 312281cf1b38f2c4ab0767659479e232, type: 2}
+  journal: {fileID: 0}

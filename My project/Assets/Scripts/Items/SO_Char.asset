@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: Char
   prefab: {fileID: 6359074989201234737, guid: 26778c8e456516449bdd3fd91c483276, type: 3}
   itemTier: 3
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 73164bb421f80064e950b3b84ed212db, type: 3}
   authorized: 0
   enfant1: {fileID: 11400000, guid: 01cbd49cf0169534db22d6653a996b0f, type: 2}
   enfant2: {fileID: 11400000, guid: 37aec89b6ac6be14196553c6c104c342, type: 2}
+  journal: {fileID: 0}
