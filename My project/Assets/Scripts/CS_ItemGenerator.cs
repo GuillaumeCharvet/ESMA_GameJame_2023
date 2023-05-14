@@ -5,6 +5,8 @@ using UnityEngine;
 public enum Cote {Gauche, Droite };
 public class CS_ItemGenerator : MonoBehaviour
 {
+    private bool gameStarted = true;
+
     private float itemSpawnFrequency = 2f;
     private float itemSpawnFrequencyRandomness = 1f;
 
@@ -15,19 +17,22 @@ public class CS_ItemGenerator : MonoBehaviour
 
     void Update()
     {
-        timeG -= Time.deltaTime;
-        if (timeG <= 0f)
+        if (gameStarted)
         {
-            timeG = itemSpawnFrequency + Random.Range(0f, itemSpawnFrequencyRandomness);
-            SpawnItem(Cote.Gauche);
-        }
+            timeG -= Time.deltaTime;
+            if (timeG <= 0f)
+            {
+                timeG = itemSpawnFrequency + Random.Range(0f, itemSpawnFrequencyRandomness);
+                SpawnItem(Cote.Gauche);
+            }
 
-        timeD -= Time.deltaTime;
-        if (timeD <= 0f)
-        {
-            timeD = itemSpawnFrequency + Random.Range(0f, itemSpawnFrequencyRandomness);
-            SpawnItem(Cote.Droite);
-        }
+            timeD -= Time.deltaTime;
+            if (timeD <= 0f)
+            {
+                timeD = itemSpawnFrequency + Random.Range(0f, itemSpawnFrequencyRandomness);
+                SpawnItem(Cote.Droite);
+            }
+        }        
     }
 
     public void SpawnItem(Cote cote)
