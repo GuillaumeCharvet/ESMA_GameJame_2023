@@ -6,12 +6,10 @@ public class S_Television : MonoBehaviour
 {
     [SerializeField] private GameObject _emplacement1;
     [SerializeField] private GameObject _emplacement2;
-    [SerializeField] private GameObject _emplacement3;
     [SerializeField] private ItemsManager ItemsManager;
     [SerializeField] private float _cdSwitchItem;
     private GameObject _item1;
     private GameObject _item2;
-    private GameObject _itemCraft;
     private SO_Item _matPremiere1;
     private SO_Item _matPremiere2;
 
@@ -34,7 +32,7 @@ public class S_Television : MonoBehaviour
     }
     private void NewItemCraft()
     {
-        var list = ItemsManager.tierItems[2];
+        var list = ItemsManager.tierItems[1];
         _itemBuild = list[Random.Range(0, list.Count)];
 
         if (!_itemBuild.authorized)
@@ -47,25 +45,24 @@ public class S_Television : MonoBehaviour
                 Destroy(_item1);
             if (_item2 != null)
                 Destroy(_item2);
-            if (_itemCraft != null)
-                Destroy(_itemCraft);
+            
 
             _matPremiere1 = _itemBuild.enfant1;
             _matPremiere2 = _itemBuild.enfant2;
 
-            _itemCraft = Instantiate(_itemBuild.prefab);
+          
             _item1 = Instantiate(_matPremiere1.prefab);
             _item2 = Instantiate(_matPremiere2.prefab);
 
-            _itemCraft.transform.position = _emplacement3.transform.position;
+           
             _item1.transform.position = _emplacement1.transform.position;
             _item2.transform.position = _emplacement2.transform.position;
 
-            _itemCraft.transform.localScale = _emplacement3.transform.localScale;
+          
             _item1.transform.localScale = _emplacement1.transform.localScale;
             _item2.transform.localScale = _emplacement2.transform.localScale;
 
-            _itemCraft.transform.rotation = _emplacement3.transform.rotation;
+          
             _item1.transform.rotation = _emplacement1.transform.rotation;
             _item2.transform.rotation = _emplacement2.transform.rotation;
 

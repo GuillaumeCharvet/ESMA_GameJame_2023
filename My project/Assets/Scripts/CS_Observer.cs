@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CS_Observer : MonoBehaviour
 {
+    [SerializeField] private S_Dialogue S_Dialogue;
     [SerializeField] private S_Television S_Television;
     [SerializeField] private ItemsManager ItemsManager;
     [SerializeField] private S_ManagerGame S_ManagerGame;
@@ -77,24 +78,58 @@ public class CS_Observer : MonoBehaviour
                 {
                     if (!ItemsManager.itemInHand.SO_Item.authorized)
                     {
-                        Debug.Log("Noooooooooooo !!");
+
+                        Destroy(ItemsManager.itemInHand);
+
+                        if(ItemsManager.itemInEtabliG != null)
+                        {
+                            Destroy(ItemsManager.itemInEtabliG);
+                        }
+                        if(ItemsManager.itemInEtabliD != null)
+                        {
+                            Destroy(ItemsManager.itemInEtabliD);
+                        }
+
                         TakeDmg();
                     }
                 }
+
                 if (ItemsManager.itemInEtabliG != null)
                 {
                     if (!ItemsManager.itemInEtabliG.SO_Item.authorized)
                     {
-                        Debug.Log("Naaaaaaaaaaaa!!");
+
+                        Destroy(ItemsManager.itemInEtabliG);
+
+                        if (ItemsManager.itemInHand != null)
+                        {
+                            Destroy(ItemsManager.itemInHand);
+                        }
+                        if (ItemsManager.itemInEtabliD != null)
+                        {
+                            Destroy(ItemsManager.itemInEtabliD);
+                        }
+                        
                         TakeDmg();
                     }
                 }
-                if (ItemsManager.itemInEtabliG != null)
+                if (ItemsManager.itemInEtabliD != null)
                 {
                     if (!ItemsManager.itemInEtabliD.SO_Item.authorized)
                     {
-                        Debug.Log("Niiiiiiiiiiiii !!");
+                        Destroy(ItemsManager.itemInEtabliD);
+
+                        if (ItemsManager.itemInHand != null)
+                        {
+                            Destroy(ItemsManager.itemInHand);
+                        }
+                        if (ItemsManager.itemInEtabliG != null)
+                        {
+                            Destroy(ItemsManager.itemInEtabliG);
+                        }
+                        
                         TakeDmg();
+
                     }
                 }
             }
@@ -149,8 +184,9 @@ public class CS_Observer : MonoBehaviour
     public void TakeDmg()
     {
         NbrVie -= 1;
+        S_Dialogue.dialogueTakeIt();
 
-        if(NbrVie > 2)
+        if (NbrVie > 2)
         {
             _led1.GetComponent<Renderer>().material = _ledON;
             _led2.GetComponent<Renderer>().material = _ledON;
