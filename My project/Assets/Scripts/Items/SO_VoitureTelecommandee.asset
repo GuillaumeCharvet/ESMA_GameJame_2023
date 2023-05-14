@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SO_VoitureTelecommandee
   m_EditorClassIdentifier: 
   itemName: "Voiture t\xE9l\xE9command\xE9e"
-  prefab: {fileID: 6359074989201234737, guid: 26778c8e456516449bdd3fd91c483276, type: 3}
+  prefab: {fileID: 919132149155446097, guid: 81d087fdec943fc4696b031804118c25, type: 3}
   itemTier: 3
   itemSound: {fileID: 8300000, guid: dcccfaa1bdc938449a513bf7be50f25a, type: 3}
   authorized: 1

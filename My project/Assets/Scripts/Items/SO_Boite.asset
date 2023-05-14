@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: Boite
   prefab: {fileID: 919132149155446097, guid: 65e198444bb9f2d49856280024e977e5, type: 3}
   itemTier: 1
-  itemSound: {fileID: 0}
+  itemSound: {fileID: 8300000, guid: 0fe26de41e678544c997929ad56aa38f, type: 3}
   authorized: 1
   enfant1: {fileID: 0}
   enfant2: {fileID: 0}
+  journal: {fileID: 0}
