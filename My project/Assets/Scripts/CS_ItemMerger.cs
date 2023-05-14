@@ -8,6 +8,8 @@ public class CS_ItemMerger : MonoBehaviour
 
     private List<SO_Item[]> mergeTable = new List<SO_Item[]>();
 
+    public GameObject smokeEffect;
+
     public void Start()
     {
         var listItems = itemsManager.items;
@@ -22,7 +24,6 @@ public class CS_ItemMerger : MonoBehaviour
                 mergeTable.Add(tab);
             }
         }
-        Debug.Log("taille merge table = " + mergeTable.Count);
     }
 
     public void PressButton()
@@ -30,19 +31,31 @@ public class CS_ItemMerger : MonoBehaviour
         Debug.Log("ATTEMPT MERGING");
         var itemG = itemsManager.itemInEtabliG;
         var itemD = itemsManager.itemInEtabliD;
-        var mergeResult = MergeResult(itemG.SO_Item, itemD.SO_Item);
-        if (mergeResult != null)
+        if (itemG.SO_Item != null && itemD.SO_Item != null)
         {
-            itemsManager.existingItems.Remove(itemG);
-            Destroy(itemsManager.itemInEtabliG.gameObject);
-            itemsManager.existingItems.Remove(itemD);
-            Destroy(itemsManager.itemInEtabliD.gameObject);
+            var mergeResult = MergeResult(itemG.SO_Item, itemD.SO_Item);
+            if (mergeResult != null)
+            {
+                smokeEffect.SetActive(true);
 
-            itemsManager.itemInEtabliG = null;
-            itemsManager.itemInEtabliD = null;            
+                itemsManager.existingItems.Remove(itemG);
+                Destroy(itemsManager.itemInEtabliG.gameObject);
+                itemsManager.existingItems.Remove(itemD);
+                Destroy(itemsManager.itemInEtabliD.gameObject);
 
-            itemsManager.itemInEtabliG = SpawnItem(mergeResult);
+                itemsManager.itemInEtabliG = null;
+                itemsManager.itemInEtabliD = null;
+
+                StartCoroutine(DelaySpawn(mergeResult));
+            }
         }
+        
+    }
+
+    public IEnumerator DelaySpawn(SO_Item mergeResult)
+    {
+        yield return new WaitForSeconds(3f);
+        itemsManager.itemInEtabliG = SpawnItem(mergeResult);
     }
 
     public SO_Item MergeResult(SO_Item itemG, SO_Item itemD)

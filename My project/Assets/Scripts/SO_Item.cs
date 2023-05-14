@@ -11,4 +11,5 @@ public class SO_Item : ScriptableObject
     public AudioClip itemSound;
     public bool authorized;
     public SO_Item enfant1, enfant2;
+    public Sprite journal;
 }

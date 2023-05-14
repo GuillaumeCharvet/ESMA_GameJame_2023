@@ -9,6 +9,8 @@ public class CS_Item : MonoBehaviour
     public ItemPosition currentItemPosition;
     public ItemsManager itemsManager;
 
+    public Cote cote;
+
     public float valueFromTapisToHand = 0f;
     public Vector3 lastPositionOnTapis;
     public Vector3 lastPositionInHand;

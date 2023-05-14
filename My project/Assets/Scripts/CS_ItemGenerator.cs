@@ -53,7 +53,16 @@ public class CS_ItemGenerator : MonoBehaviour
         itemsManager.existingItems.Add(csItem);
         csItem.SO_Item = soItem;
         csItem.itemsManager = itemsManager;
-        if (cote == Cote.Gauche) csItem.currentItemPosition = ItemPosition.TapisRoulant_G;
-        else csItem.currentItemPosition = ItemPosition.TapisRoulant_D;
+        if (cote == Cote.Gauche)
+        {
+            csItem.currentItemPosition = ItemPosition.TapisRoulant_G;
+            csItem.cote = Cote.Gauche;
+        }
+        else
+        {
+            csItem.currentItemPosition = ItemPosition.TapisRoulant_D;
+            csItem.cote = Cote.Droite;
+        }
+
     }
 }
