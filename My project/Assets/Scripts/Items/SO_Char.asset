@@ -19,4 +19,4 @@ MonoBehaviour:
   authorized: 0
   enfant1: {fileID: 11400000, guid: 01cbd49cf0169534db22d6653a996b0f, type: 2}
   enfant2: {fileID: 11400000, guid: 37aec89b6ac6be14196553c6c104c342, type: 2}
-  journal: {fileID: 0}
+  journal: {fileID: 21300000, guid: 3adb38ffe31fe074281caa5463067370, type: 3}
