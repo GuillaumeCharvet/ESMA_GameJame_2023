@@ -16,6 +16,6 @@ MonoBehaviour:
   prefab: {fileID: 919132149155446097, guid: 8cae82845d01dec4c8087090ae9e1686, type: 3}
   itemTier: 1
   itemSound: {fileID: 0}
-  authorized: 1
+  authorized: 0
   enfant1: {fileID: 0}
   enfant2: {fileID: 0}

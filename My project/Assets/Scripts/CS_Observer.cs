@@ -5,6 +5,9 @@ using UnityEngine;
 public class CS_Observer : MonoBehaviour
 {
     [SerializeField] private S_Television S_Television;
+    [SerializeField] private ItemsManager ItemsManager;
+    [SerializeField] private S_ManagerGame S_ManagerGame;
+
     [SerializeField] private bool _CameraIsActive;
     [SerializeField] private bool _CameraOnConnection;
     [SerializeField] private bool _ActiveTimerCam;
@@ -26,6 +29,7 @@ public class CS_Observer : MonoBehaviour
     [SerializeField] private GameObject _led3;
 
 
+    public bool StopGame;
     [Header("Info Debug")]
     [SerializeField] private float _TimerObservation;
     [SerializeField] private bool CamStop;
@@ -37,36 +41,63 @@ public class CS_Observer : MonoBehaviour
         _ActiveTimerCam = false;
         _TimerObservation = 0f;
 
+        StopGame = false;
+
     }
 
     private void Update()
     {
-        if (_TimerObservation > 0)
+        if (!StopGame)
         {
-            _TimerObservation = _TimerObservation - Time.deltaTime;
-        }
+            if (_TimerObservation > 0)
+            {
+                _TimerObservation = _TimerObservation - Time.deltaTime;
+            }
 
-        if (_ActiveTimerCam && _TimerObservation <= 0)
-        {
-            StartCoroutine(ConnetionCamera());
-        }
+            if (_ActiveTimerCam && _TimerObservation <= 0)
+            {
+                StartCoroutine(ConnetionCamera());
+            }
 
-        if (_CameraOnConnection)
-            _animCam.SetBool("IsConnect", true);
-        else
-            _animCam.SetBool("IsConnect", false);
-
-
-        if (_CameraIsActive)
-            _animCam.SetBool("IsActive", true);
-        else
-            _animCam.SetBool("IsActive", false);
+            if (_CameraOnConnection)
+                _animCam.SetBool("IsConnect", true);
+            else
+                _animCam.SetBool("IsConnect", false);
 
 
-        if(_CameraIsActive)
-        {
-            //check item autorisé dans la main et sur le plan de travail
-                TakeDmg();
+            if (_CameraIsActive)
+                _animCam.SetBool("IsActive", true);
+            else
+                _animCam.SetBool("IsActive", false);
+
+
+            if (_CameraIsActive)
+            {
+                if (ItemsManager.itemInHand != null)
+                {
+                    if (!ItemsManager.itemInHand.GetComponent<SO_Item>().authorized)
+                    {
+                        Debug.Log("Noooooooooooo !!");
+                        TakeDmg();
+                    }
+                }
+                if (ItemsManager.itemInEtabliG != null)
+                {
+                    if (!ItemsManager.itemInEtabliG.GetComponent<SO_Item>().authorized)
+                    {
+                        Debug.Log("Naaaaaaaaaaaa!!");
+                        TakeDmg();
+                    }
+                }
+                if (ItemsManager.itemInEtabliG != null)
+                {
+                    if (!ItemsManager.itemInEtabliD.GetComponent<SO_Item>().authorized)
+                    {
+                        Debug.Log("Niiiiiiiiiiiii !!");
+                        TakeDmg();
+                    }
+                }
+            }
         }
     }
     public void ActiveTimer()   //if(3 obj fabriqué){ _ActiveTimer = true }
@@ -78,23 +109,23 @@ public class CS_Observer : MonoBehaviour
     {
         _ActiveTimerCam = false;
         _CameraOnConnection = true;
-        //_animCam.SetBool("IsConnect", true);
+
         yield return new WaitForSeconds(_CDCamConnection);
         _CameraOnConnection = false;
-        //_animCam.SetBool("IsConnect", false);
+
 
         ActiveCam();
 
         if (_CameraIsActive)
         {
             ResetTimerCamEnable();
-            //_animCam.SetBool("IsActive", true);
+
             
         }
         else
         {
             ResetTimerCamDisable();
-            //_animCam.SetBool("IsActive", false);
+
            
         }
     }
@@ -142,8 +173,9 @@ public class CS_Observer : MonoBehaviour
             _led1.GetComponent<Renderer>().material = _ledOFF;
             _led2.GetComponent<Renderer>().material = _ledOFF;
             _led3.GetComponent<Renderer>().material = _ledOFF;
-            
-            //EndGame
+
+            StopGame = true;
+            S_ManagerGame.EndGame();
         }
     }
 
