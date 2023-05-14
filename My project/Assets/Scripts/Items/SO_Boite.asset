@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SO_Boite
   m_EditorClassIdentifier: 
   itemName: Boite
-  prefab: {fileID: 0}
+  prefab: {fileID: 919132149155446097, guid: 65e198444bb9f2d49856280024e977e5, type: 3}
   itemTier: 1
   itemSound: {fileID: 0}
   authorized: 1

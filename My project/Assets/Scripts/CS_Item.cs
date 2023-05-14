@@ -28,7 +28,7 @@ public class CS_Item : MonoBehaviour
         {
             case ItemPosition.TapisRoulant_G:
 
-                transform.localScale = Mathf.LerpUnclamped(1f, itemsManager.sizeOfItemInHand, itemsManager.rescaleProfile.Evaluate(valueFromTapisToHand)) * Vector3.one;
+                transform.localScale = Mathf.LerpUnclamped(1f, itemsManager.sizeOfItemInHand, itemsManager.rescaleProfileTapis.Evaluate(valueFromTapisToHand)) * Vector3.one;
 
                 if (currentTapisRoulantIndex < itemsManager.posTapisGauche.Count - 1)
                 {
@@ -59,7 +59,7 @@ public class CS_Item : MonoBehaviour
 
             case ItemPosition.TapisRoulant_D:
 
-                transform.localScale = Mathf.Lerp(1f, itemsManager.sizeOfItemInHand, valueFromTapisToHand) * Vector3.one;
+                transform.localScale = Mathf.Lerp(1f, itemsManager.sizeOfItemInHand, itemsManager.rescaleProfileTapis.Evaluate(valueFromTapisToHand)) * Vector3.one;
 
                 if (currentTapisRoulantIndex < itemsManager.posTapisDroite.Count - 1)
                 {
@@ -93,7 +93,7 @@ public class CS_Item : MonoBehaviour
                 var screenPos = Input.mousePosition;
                 screenPos.z = itemsManager.cam.nearClipPlane + itemsManager.handDistanceToCam;
 
-                transform.position = Vector3.Lerp(lastPositionOnTapis, itemsManager.cam.ScreenToWorldPoint(screenPos), valueFromTapisToHand);
+                transform.position = Vector3.Lerp(lastPositionOnTapis, itemsManager.cam.ScreenToWorldPoint(screenPos), itemsManager.rescaleProfileMain.Evaluate(valueFromTapisToHand));
                 transform.localScale = Mathf.Lerp(1f, itemsManager.sizeOfItemInHand, valueFromTapisToHand) * Vector3.one;
 
                 break;

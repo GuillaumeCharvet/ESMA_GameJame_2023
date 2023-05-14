@@ -38,6 +38,12 @@ public class CS_ItemGenerator : MonoBehaviour
         item.tag = "Item";
         item.layer =  LayerMask.NameToLayer("Item");
 
+        var colliderAbsent = (item.GetComponent<Collider>() == null);
+        if (colliderAbsent)
+        {
+            item.AddComponent<MeshCollider>();
+        }
+
         var csItem = item.AddComponent<CS_Item>();
         itemsManager.existingItems.Add(csItem);
         csItem.SO_Item = soItem;

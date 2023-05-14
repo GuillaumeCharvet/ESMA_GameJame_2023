@@ -29,7 +29,8 @@ public class ItemsManager : MonoBehaviour
     public float speedFromTapisToHand = 2f;
     public float speedFromHandToTapis = 4f;
     public Cote coteOfItemInHand;
-    public AnimationCurve rescaleProfile;
+    public AnimationCurve rescaleProfileTapis;
+    public AnimationCurve rescaleProfileMain;
     public AnimationCurve speedProfile;
 
     [Header("Trash")]
@@ -43,11 +44,13 @@ public class ItemsManager : MonoBehaviour
     public float sizeOfItemInDepot = 0.6f;
 
     [Header("Etabli")]
+    public CS_Item itemInEtabliG, itemInEtabliD;
     public Transform posEtabli_G, posEtabli_D;
     public float etabliSpeed = 0.45f;
     public float sizeOfItemInEtabli = 0.8f;
 
     [Header("Stockage")]
+    public CS_Item itemInStockage_1, itemInStockage_2, itemInStockage_3, itemInStockage_4, itemInStockage_5;
     public Transform posStockage_1, posStockage_2, posStockage_3, posStockage_4, posStockage_5;
     public float stockageSpeed = 0.45f;
     public float sizeOfItemInStockage = 0.25f;
@@ -109,6 +112,14 @@ public class ItemsManager : MonoBehaviour
                     item.lastPositionOnTapis = objectHit.position;
                     StartCoroutine(IncreaseValue(itemInHand));
 
+                    if (item.currentItemPosition == ItemPosition.Etabli_G) itemInEtabliG = null;
+                    else if (item.currentItemPosition == ItemPosition.Etabli_D) itemInEtabliD = null;
+                    else if (item.currentItemPosition == ItemPosition.Stockage_1) itemInStockage_1 = null;
+                    else if (item.currentItemPosition == ItemPosition.Stockage_2) itemInStockage_2 = null;
+                    else if (item.currentItemPosition == ItemPosition.Stockage_3) itemInStockage_3 = null;
+                    else if (item.currentItemPosition == ItemPosition.Stockage_4) itemInStockage_4 = null;
+                    else if (item.currentItemPosition == ItemPosition.Stockage_5) itemInStockage_5 = null;
+
                     item.currentItemPosition = ItemPosition.Main;
                 }
             }
@@ -143,31 +154,87 @@ public class ItemsManager : MonoBehaviour
                 }
                 else if (hit.transform.CompareTag("Etabli_G"))
                 {
-                    itemInHand.currentItemPosition = ItemPosition.Etabli_G;
+                    if (itemInEtabliG == null)
+                    {
+                        itemInHand.currentItemPosition = ItemPosition.Etabli_G;
+                        itemInEtabliG = itemInHand;
+                    }
+                    else
+                    {
+                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                    }
                 }
                 else if (hit.transform.CompareTag("Etabli_D"))
                 {
-                    itemInHand.currentItemPosition = ItemPosition.Etabli_D;
+                    if (itemInEtabliD == null)
+                    {
+                        itemInHand.currentItemPosition = ItemPosition.Etabli_D;
+                        itemInEtabliD = itemInHand;
+                    }
+                    else
+                    {
+                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                    }
                 }
                 else if (hit.transform.CompareTag("Stockage_1"))
                 {
-                    itemInHand.currentItemPosition = ItemPosition.Stockage_1;
+                    if (itemInStockage_1 == null)
+                    {
+                        itemInHand.currentItemPosition = ItemPosition.Stockage_1;
+                        itemInStockage_1 = itemInHand;
+                    }
+                    else
+                    {
+                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                    }
                 }
                 else if (hit.transform.CompareTag("Stockage_2"))
                 {
-                    itemInHand.currentItemPosition = ItemPosition.Stockage_2;
+                    if (itemInStockage_2 == null)
+                    {
+                        itemInHand.currentItemPosition = ItemPosition.Stockage_2;
+                        itemInStockage_2 = itemInHand;
+                    }
+                    else
+                    {
+                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                    }
                 }
                 else if (hit.transform.CompareTag("Stockage_3"))
                 {
-                    itemInHand.currentItemPosition = ItemPosition.Stockage_3;
+                    if (itemInStockage_3 == null)
+                    {
+                        itemInHand.currentItemPosition = ItemPosition.Stockage_3;
+                        itemInStockage_3 = itemInHand;
+                    }
+                    else
+                    {
+                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                    }
                 }
                 else if (hit.transform.CompareTag("Stockage_4"))
                 {
-                    itemInHand.currentItemPosition = ItemPosition.Stockage_4;
+                    if (itemInStockage_4 == null)
+                    {
+                        itemInHand.currentItemPosition = ItemPosition.Stockage_4;
+                        itemInStockage_4 = itemInHand;
+                    }
+                    else
+                    {
+                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                    }
                 }
                 else if (hit.transform.CompareTag("Stockage_5"))
                 {
-                    itemInHand.currentItemPosition = ItemPosition.Stockage_5;
+                    if (itemInStockage_5 == null)
+                    {
+                        itemInHand.currentItemPosition = ItemPosition.Stockage_5;
+                        itemInStockage_5 = itemInHand;
+                    }
+                    else
+                    {
+                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                    }
                 }
                 else
                 {
@@ -180,11 +247,13 @@ public class ItemsManager : MonoBehaviour
             }
 
             itemInHand.lastPositionInHand = itemInHand.transform.position;
-            isItemInHand = false;
 
             //StopCoroutine(IncreaseValue(itemInHand));
             StopAllCoroutines();
             StartCoroutine(DecreaseValue(itemInHand));
+
+            itemInHand = null;
+            isItemInHand = false;
         }
     }
     public IEnumerator DecreaseValue(CS_Item item)
@@ -204,9 +273,7 @@ public class ItemsManager : MonoBehaviour
 
     public SO_Item GetRandomItem(int tier)
     {
-        Debug.Log("taille tier 1 = " + tierItems[0].Count);
         int randomInd = Random.Range(0, tierItems[tier - 1].Count);
-        Debug.Log("random index = " + randomInd);
         return tierItems[tier - 1][randomInd];
     }
     public SO_Item GetRandomItem(bool authorized)
