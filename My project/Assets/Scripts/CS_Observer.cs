@@ -78,16 +78,22 @@ public class CS_Observer : MonoBehaviour
                 {
                     if (!ItemsManager.itemInHand.SO_Item.authorized)
                     {
+                        ItemsManager.existingItems.Remove(ItemsManager.itemInHand);
+                        Destroy(ItemsManager.itemInHand.gameObject);
+                        ItemsManager.itemInHand = null;
+                        ItemsManager.isItemInHand = false;
 
-                        Destroy(ItemsManager.itemInHand);
-
-                        if(ItemsManager.itemInEtabliG != null)
+                        if (ItemsManager.itemInEtabliG != null)
                         {
-                            Destroy(ItemsManager.itemInEtabliG);
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliG);
+                            Destroy(ItemsManager.itemInEtabliG.gameObject);
+                            ItemsManager.itemInEtabliG = null;
                         }
                         if(ItemsManager.itemInEtabliD != null)
                         {
-                            Destroy(ItemsManager.itemInEtabliD);
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliD);
+                            Destroy(ItemsManager.itemInEtabliD.gameObject);
+                            ItemsManager.itemInEtabliD = null;
                         }
 
                         TakeDmg();
@@ -98,16 +104,22 @@ public class CS_Observer : MonoBehaviour
                 {
                     if (!ItemsManager.itemInEtabliG.SO_Item.authorized)
                     {
-
-                        Destroy(ItemsManager.itemInEtabliG);
+                        ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliG);
+                        Destroy(ItemsManager.itemInEtabliG.gameObject);
+                        ItemsManager.itemInEtabliG = null;
 
                         if (ItemsManager.itemInHand != null)
                         {
-                            Destroy(ItemsManager.itemInHand);
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInHand);
+                            Destroy(ItemsManager.itemInHand.gameObject);
+                            ItemsManager.itemInHand = null;
+                            ItemsManager.isItemInHand = false;
                         }
                         if (ItemsManager.itemInEtabliD != null)
                         {
-                            Destroy(ItemsManager.itemInEtabliD);
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliD);
+                            Destroy(ItemsManager.itemInEtabliD.gameObject);
+                            ItemsManager.itemInEtabliD = null;
                         }
                         
                         TakeDmg();
@@ -117,15 +129,22 @@ public class CS_Observer : MonoBehaviour
                 {
                     if (!ItemsManager.itemInEtabliD.SO_Item.authorized)
                     {
-                        Destroy(ItemsManager.itemInEtabliD);
+                        ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliD);
+                        Destroy(ItemsManager.itemInEtabliD.gameObject);
+                        ItemsManager.itemInEtabliD = null;
 
                         if (ItemsManager.itemInHand != null)
                         {
-                            Destroy(ItemsManager.itemInHand);
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInHand);
+                            Destroy(ItemsManager.itemInHand.gameObject);
+                            ItemsManager.itemInHand = null;
+                            ItemsManager.isItemInHand = false;
                         }
                         if (ItemsManager.itemInEtabliG != null)
                         {
-                            Destroy(ItemsManager.itemInEtabliG);
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliG);
+                            Destroy(ItemsManager.itemInEtabliG.gameObject);
+                            ItemsManager.itemInEtabliG = null;
                         }
                         
                         TakeDmg();
