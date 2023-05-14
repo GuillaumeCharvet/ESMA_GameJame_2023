@@ -14,6 +14,8 @@ public class ItemsManager : MonoBehaviour
 
     public List<CS_Item> existingItems = new List<CS_Item>();
 
+    public AudioSource audioSource;
+
     public LayerMask grabLayer, dropLayer;
 
     [Header ("Tapis")]
