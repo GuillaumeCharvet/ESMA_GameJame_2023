@@ -75,7 +75,7 @@ public class CS_Observer : MonoBehaviour
             {
                 if (ItemsManager.itemInHand != null)
                 {
-                    if (!ItemsManager.itemInHand.GetComponent<SO_Item>().authorized)
+                    if (!ItemsManager.itemInHand.SO_Item.authorized)
                     {
                         Debug.Log("Noooooooooooo !!");
                         TakeDmg();
@@ -83,7 +83,7 @@ public class CS_Observer : MonoBehaviour
                 }
                 if (ItemsManager.itemInEtabliG != null)
                 {
-                    if (!ItemsManager.itemInEtabliG.GetComponent<SO_Item>().authorized)
+                    if (!ItemsManager.itemInEtabliG.SO_Item.authorized)
                     {
                         Debug.Log("Naaaaaaaaaaaa!!");
                         TakeDmg();
@@ -91,7 +91,7 @@ public class CS_Observer : MonoBehaviour
                 }
                 if (ItemsManager.itemInEtabliG != null)
                 {
-                    if (!ItemsManager.itemInEtabliD.GetComponent<SO_Item>().authorized)
+                    if (!ItemsManager.itemInEtabliD.SO_Item.authorized)
                     {
                         Debug.Log("Niiiiiiiiiiiii !!");
                         TakeDmg();

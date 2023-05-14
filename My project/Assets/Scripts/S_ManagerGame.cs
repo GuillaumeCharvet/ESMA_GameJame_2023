@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class S_ManagerGame : MonoBehaviour
 {
-    private CS_Observer CS_Observer;
-    private S_Timer S_Timer;
+    [SerializeField] private CS_Observer CS_Observer;
+    [SerializeField] private S_Timer S_Timer;
 
 
     private void Start()
@@ -36,6 +36,10 @@ public class S_ManagerGame : MonoBehaviour
 
     public void EndGame()
     {
+        CS_Observer.StopGame = true;
+        S_Timer._isTimerStopped = false;
+
+
         if (CS_Observer.NbrVie == 0)
         {
             //Afficher fin par trop d'erreur;
