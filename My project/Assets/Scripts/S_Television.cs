@@ -66,7 +66,6 @@ public class S_Television : MonoBehaviour
             _item1.transform.rotation = _emplacement1.transform.rotation;
             _item2.transform.rotation = _emplacement2.transform.rotation;
 
-            //_item1.GetComponent<Renderer>().shadowCastingMode;
             _cdNewItem = _cdSwitchItem;
         }
     }
