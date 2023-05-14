@@ -14,6 +14,9 @@ public class ItemsManager : MonoBehaviour
 
     public List<CS_Item> existingItems = new List<CS_Item>();
 
+    public AudioSource audioSource;
+    public CS_FinalResult finalResult;
+
     public LayerMask grabLayer, dropLayer;
 
     [Header ("Tapis")]
@@ -86,10 +89,16 @@ public class ItemsManager : MonoBehaviour
 
     public void LateUpdate()
     {
+        for (int i = 0; i < existingItems.Count; i++)
+        {
+            existingItems[i].Move();
+        }
+        /*
         foreach (var item in existingItems)
         {
             item.Move();
         }
+        */
     }
 
     public void CheckIfGrabbingItem()
@@ -106,9 +115,16 @@ public class ItemsManager : MonoBehaviour
                     Transform objectHit = hit.transform;
                     var item = objectHit.GetComponent<CS_Item>();
 
+                    var clip = item.SO_Item.itemSound;
+                    if (clip != null)
+                    {
+                        audioSource.clip = clip;
+                        audioSource.Play();
+                    }
+
                     isItemInHand = true;
                     itemInHand = item;
-                    coteOfItemInHand = item.currentItemPosition == ItemPosition.TapisRoulant_G ? Cote.Gauche : Cote.Droite;
+                    //coteOfItemInHand = item.currentItemPosition == ItemPosition.TapisRoulant_G ? Cote.Gauche : Cote.Droite;
                     item.lastPositionOnTapis = objectHit.position;
                     StartCoroutine(IncreaseValue(itemInHand));
 
@@ -151,6 +167,8 @@ public class ItemsManager : MonoBehaviour
                 else if (hit.transform.CompareTag("DropZone"))
                 {
                     itemInHand.currentItemPosition = ItemPosition.Depot;
+                    finalResult.IncrementItemSent(itemInHand.SO_Item);
+
                 }
                 else if (hit.transform.CompareTag("Etabli_G"))
                 {
@@ -161,7 +179,7 @@ public class ItemsManager : MonoBehaviour
                     }
                     else
                     {
-                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                        itemInHand.currentItemPosition = itemInHand.cote == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
                     }
                 }
                 else if (hit.transform.CompareTag("Etabli_D"))
@@ -173,7 +191,7 @@ public class ItemsManager : MonoBehaviour
                     }
                     else
                     {
-                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                        itemInHand.currentItemPosition = itemInHand.cote == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
                     }
                 }
                 else if (hit.transform.CompareTag("Stockage_1"))
@@ -185,7 +203,7 @@ public class ItemsManager : MonoBehaviour
                     }
                     else
                     {
-                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                        itemInHand.currentItemPosition = itemInHand.cote == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
                     }
                 }
                 else if (hit.transform.CompareTag("Stockage_2"))
@@ -197,7 +215,7 @@ public class ItemsManager : MonoBehaviour
                     }
                     else
                     {
-                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                        itemInHand.currentItemPosition = itemInHand.cote == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
                     }
                 }
                 else if (hit.transform.CompareTag("Stockage_3"))
@@ -209,7 +227,7 @@ public class ItemsManager : MonoBehaviour
                     }
                     else
                     {
-                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                        itemInHand.currentItemPosition = itemInHand.cote == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
                     }
                 }
                 else if (hit.transform.CompareTag("Stockage_4"))
@@ -221,7 +239,7 @@ public class ItemsManager : MonoBehaviour
                     }
                     else
                     {
-                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                        itemInHand.currentItemPosition = itemInHand.cote == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
                     }
                 }
                 else if (hit.transform.CompareTag("Stockage_5"))
@@ -233,17 +251,17 @@ public class ItemsManager : MonoBehaviour
                     }
                     else
                     {
-                        itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                        itemInHand.currentItemPosition = itemInHand.cote == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
                     }
                 }
                 else
                 {
-                    itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                    itemInHand.currentItemPosition = itemInHand.cote == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
                 }
             }
             else
             {
-                itemInHand.currentItemPosition = coteOfItemInHand == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
+                itemInHand.currentItemPosition = itemInHand.cote == Cote.Gauche ? ItemPosition.TapisRoulant_G : ItemPosition.TapisRoulant_D;
             }
 
             itemInHand.lastPositionInHand = itemInHand.transform.position;

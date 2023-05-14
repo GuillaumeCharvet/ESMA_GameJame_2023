@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SO_Tube
   m_EditorClassIdentifier: 
   itemName: Tube
-  prefab: {fileID: 6359074989201234737, guid: 26778c8e456516449bdd3fd91c483276, type: 3}
+  prefab: {fileID: 919132149155446097, guid: 402609695a3dc50439d40a7ad6faf33a, type: 3}
   itemTier: 1
   itemSound: {fileID: 0}
   authorized: 1

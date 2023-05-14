@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CS_Observer : MonoBehaviour
 {
+    [SerializeField] private S_Dialogue S_Dialogue;
     [SerializeField] private S_Television S_Television;
     [SerializeField] private ItemsManager ItemsManager;
     [SerializeField] private S_ManagerGame S_ManagerGame;
@@ -75,26 +76,79 @@ public class CS_Observer : MonoBehaviour
             {
                 if (ItemsManager.itemInHand != null)
                 {
-                    if (!ItemsManager.itemInHand.GetComponent<SO_Item>().authorized)
+                    if (!ItemsManager.itemInHand.SO_Item.authorized)
                     {
-                        Debug.Log("Noooooooooooo !!");
+                        ItemsManager.existingItems.Remove(ItemsManager.itemInHand);
+                        Destroy(ItemsManager.itemInHand.gameObject);
+                        ItemsManager.itemInHand = null;
+                        ItemsManager.isItemInHand = false;
+
+                        if (ItemsManager.itemInEtabliG != null)
+                        {
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliG);
+                            Destroy(ItemsManager.itemInEtabliG.gameObject);
+                            ItemsManager.itemInEtabliG = null;
+                        }
+                        if(ItemsManager.itemInEtabliD != null)
+                        {
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliD);
+                            Destroy(ItemsManager.itemInEtabliD.gameObject);
+                            ItemsManager.itemInEtabliD = null;
+                        }
+
                         TakeDmg();
                     }
                 }
+
                 if (ItemsManager.itemInEtabliG != null)
                 {
-                    if (!ItemsManager.itemInEtabliG.GetComponent<SO_Item>().authorized)
+                    if (!ItemsManager.itemInEtabliG.SO_Item.authorized)
                     {
-                        Debug.Log("Naaaaaaaaaaaa!!");
+                        ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliG);
+                        Destroy(ItemsManager.itemInEtabliG.gameObject);
+                        ItemsManager.itemInEtabliG = null;
+
+                        if (ItemsManager.itemInHand != null)
+                        {
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInHand);
+                            Destroy(ItemsManager.itemInHand.gameObject);
+                            ItemsManager.itemInHand = null;
+                            ItemsManager.isItemInHand = false;
+                        }
+                        if (ItemsManager.itemInEtabliD != null)
+                        {
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliD);
+                            Destroy(ItemsManager.itemInEtabliD.gameObject);
+                            ItemsManager.itemInEtabliD = null;
+                        }
+                        
                         TakeDmg();
                     }
                 }
-                if (ItemsManager.itemInEtabliG != null)
+                if (ItemsManager.itemInEtabliD != null)
                 {
-                    if (!ItemsManager.itemInEtabliD.GetComponent<SO_Item>().authorized)
+                    if (!ItemsManager.itemInEtabliD.SO_Item.authorized)
                     {
-                        Debug.Log("Niiiiiiiiiiiii !!");
+                        ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliD);
+                        Destroy(ItemsManager.itemInEtabliD.gameObject);
+                        ItemsManager.itemInEtabliD = null;
+
+                        if (ItemsManager.itemInHand != null)
+                        {
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInHand);
+                            Destroy(ItemsManager.itemInHand.gameObject);
+                            ItemsManager.itemInHand = null;
+                            ItemsManager.isItemInHand = false;
+                        }
+                        if (ItemsManager.itemInEtabliG != null)
+                        {
+                            ItemsManager.existingItems.Remove(ItemsManager.itemInEtabliG);
+                            Destroy(ItemsManager.itemInEtabliG.gameObject);
+                            ItemsManager.itemInEtabliG = null;
+                        }
+                        
                         TakeDmg();
+
                     }
                 }
             }
@@ -149,8 +203,9 @@ public class CS_Observer : MonoBehaviour
     public void TakeDmg()
     {
         NbrVie -= 1;
+        S_Dialogue.dialogueTakeIt();
 
-        if(NbrVie > 2)
+        if (NbrVie > 2)
         {
             _led1.GetComponent<Renderer>().material = _ledON;
             _led2.GetComponent<Renderer>().material = _ledON;

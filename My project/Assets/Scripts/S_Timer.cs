@@ -13,7 +13,7 @@ public class S_Timer : MonoBehaviour
     [Header("Info Debug")]
     //[SerializeField] private bool _stopTimer = true;
 
-    [SerializeField] private bool _isTimerStopped;
+    public bool _isTimerStopped;
 
     private float _minutes, _seconds;
     public float _time;
@@ -86,7 +86,7 @@ public class S_Timer : MonoBehaviour
             yield return new WaitForEndOfFrame();
             yield return new WaitWhile(() => _isTimerStopped);
             _time = (_time - Time.deltaTime);
-            Debug.Log(_time);
+            
 
             _minutes = (int)(_time / 60f) % 60;
             _seconds = (int)(_time % 60f);
