@@ -76,6 +76,7 @@ public class S_Timer : MonoBehaviour
         {
             S_ManagerGame.EndGame();
             _isTimerStopped = false;
+            _time = 360f;
         }
     }
 

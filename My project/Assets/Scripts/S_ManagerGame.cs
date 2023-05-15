@@ -62,8 +62,6 @@ public class S_ManagerGame : MonoBehaviour
             _journalImage.Add(_journalImageLoose);
         }
 
-        
-
 
         var listItems = CS_FinalResult.numberOfItemSent;
         for (int i = 0; i < listItems.Length; i++)
@@ -75,6 +73,7 @@ public class S_ManagerGame : MonoBehaviour
         }
         
 
+
         AfficheImage();
     }
 
@@ -83,12 +82,20 @@ public class S_ManagerGame : MonoBehaviour
         if (currentJournalIndex < _journalImage.Count - 1)
         {
             _UIJournal.sprite = _journalImage[currentJournalIndex];
-            currentJournalIndex += 1;
         }
         else
         {
-            _UIJournal.sprite = null;
+            //_UIJournal.sprite = null;
             _boutonReload.SetActive(true);
         }
     }
+     
+    public void nextjournal()
+    {
+        currentJournalIndex += 1;
+        AfficheImage();
+    }
+
+    
+
 }

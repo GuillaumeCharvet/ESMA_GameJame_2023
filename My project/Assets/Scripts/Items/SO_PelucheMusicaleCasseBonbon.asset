@@ -18,5 +18,5 @@ MonoBehaviour:
   itemSound: {fileID: 8300000, guid: b855c07c7517a1c4fb7bf4aaadd7783a, type: 3}
   authorized: 0
   enfant1: {fileID: 11400000, guid: c4f656e9a69d1c841ad45f4405c1da07, type: 2}
-  enfant2: {fileID: 11400000, guid: 65d7e03209519664985e4ea8a5f6bfdd, type: 2}
-  journal: {fileID: 0}
+  enfant2: {fileID: 11400000, guid: 7dae46bc472f4674aa9bd7f22a85d1f1, type: 2}
+  journal: {fileID: 21300000, guid: 85dbce552c0a4504fadd7e35262d533e, type: 3}
