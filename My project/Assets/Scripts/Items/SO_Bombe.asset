@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SO_Bombe
   m_EditorClassIdentifier: 
   itemName: Bombe
-  prefab: {fileID: 6359074989201234737, guid: 26778c8e456516449bdd3fd91c483276, type: 3}
+  prefab: {fileID: 919132149155446097, guid: bb1aa82650942fb4c9d4244b8064d6db, type: 3}
   itemTier: 3
   itemSound: {fileID: 8300000, guid: 5e40344067f22d7449778107eddfa8cb, type: 3}
   authorized: 0

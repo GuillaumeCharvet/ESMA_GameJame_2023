@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SO_Nounours
   m_EditorClassIdentifier: 
   itemName: Nounours
-  prefab: {fileID: 6359074989201234737, guid: 26778c8e456516449bdd3fd91c483276, type: 3}
+  prefab: {fileID: 919132149155446097, guid: 46a0c2ca83bda424da73f840ef3f6c65, type: 3}
   itemTier: 2
   itemSound: {fileID: 8300000, guid: db13c4d4289bb58488e5d4bca18342b6, type: 3}
   authorized: 1

@@ -20,7 +20,7 @@ public class S_ManagerGame : MonoBehaviour
 
 
 
-    private GameObject _EndMenu;
+    [SerializeField] private GameObject _EndMenu;
     private GameObject _homeBouton;
 
     private void Start()
